@@ -54,7 +54,40 @@ $(function() {
     });
     /* Конец */
 
-    /* Конец */
+    /* Функция адаптива блок-слайдеров Slick-slider */
+    sliderTransform();
+    $(window).resize(function(){
+        sliderTransform();
+    });
+
+    function sliderTransform(){
+        var slider_obj_1 = $('#volat .volat_icon');//Запоминаем блок
+
+        if ($(window).width() <= 992) {
+            //запуск конкретного слайдера и выбор его внешнего вида
+            initializSlider(slider_obj_1); //выбираем функцию для внешнего вида
+        } else {
+            //отключение конкретного слайдера
+            stopSlider(slider_obj_1);
+        }
+    }
+
+    /* Функции отключения слайдера */
+    function stopSlider(slider) {
+        slider.slick('unslick');
+    }
+
+    /* Функции запуска слайдера */
+    function initializSlider(slider){//слайдер с точками, без стрелок
+        slider.slick({
+            infinite: true,
+            dots: true,
+            arrows: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            fade: true,
+        })
+    }
     /* Конец */
 
     /* Конец */
