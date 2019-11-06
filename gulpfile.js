@@ -32,7 +32,7 @@ gulp.task('browser-sync', function() {
   })
 });
 
-gulp.task('svgSpriteBuild', function () {
+/*gulp.task('svgSpriteBuild', function () {
     return gulp.src('app/svg/!*.svg')
     // minify svg
         .pipe(svgmin({
@@ -61,7 +61,7 @@ gulp.task('svgSpriteBuild', function () {
             }
         }))
         .pipe(gulp.dest('app/images'));
-});
+});*/
 
 /*gulp.task('svgSpriteSass', function () {
     return gulp.src('app/svg/!*.svg')
@@ -120,7 +120,7 @@ gulp.task('styles-libs', function() {
 gulp.task('js', function() {
   return gulp.src([
       'app/libs/jquery/dist/jquery.min.js',
-      'app/libs/svg/svg4everybody.js',
+      //'app/libs/svg/svg4everybody.js',
       'app/libs/fancybox/jquery.fancybox.js',
       'app/libs/fancybox/jquery.fancybox.pack.js',
       'app/libs/slick-slider/slick.min.js',
@@ -182,7 +182,6 @@ gulp.task('code', function(){
 
 gulp.task('watch', function() {
     gulp.watch('app/' + syntax + '/**/*.' + syntax + '', gulp.parallel('styles'));
-    gulp.watch('app/svg/**/*', gulp.parallel('svgSpriteBuild'));
     gulp.watch(['libs/**/*.js', 'app/js/common.js'], gulp.parallel('js'));
     gulp.watch('app/*.html', gulp.parallel('code'));
 });
