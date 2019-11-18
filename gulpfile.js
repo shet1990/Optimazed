@@ -155,13 +155,13 @@ gulp.task('rsync', function() {
     }))
 });
 
-gulp.task('clean', function() {
+/*gulp.task('clean', function() {
   return del.sync('dist'); // Удаляем папку dist перед сборкой
 });
 
 gulp.task('clear', function(callback) {
   return cache.clearAll();
-})
+})*/
 
 gulp.task('img', function() {
   return gulp.src('app/img/***') // Берем все изображения из app
